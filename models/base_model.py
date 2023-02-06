@@ -8,7 +8,9 @@ from datetime import datetime
 import models
 import json
 
+
 date_now = datetime.now()
+
 
 class BaseModel():
     """ BaseModel class """
@@ -23,7 +25,7 @@ class BaseModel():
         """ str definition """
 
         return "[{}] ({}) {}".format(self.__class__.__name__,
-                self.id, self.__dict__)
+                                     self.id, self.__dict__)
 
     def save(self):
         """ save definition """
@@ -37,11 +39,9 @@ class BaseModel():
 
         for key, item in self.__dict__.items():
             dic[key] = item
-        
+
         dic['__class__'] = self.__class__.__name__
         dic['created_at'] = str(self.created_at.isoformat())
         dic['updated_at'] = str(self.updated_at.isoformat())
-        
+
         return dic
-
-
