@@ -36,8 +36,6 @@ class BaseModel():
         """ save definition """
 
         self.updated_at = date_now
-        models.storage.new(self)
-        models.storage.save()
 
     def to_dict(self):
         """ to_dict definition """
