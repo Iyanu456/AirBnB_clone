@@ -11,7 +11,7 @@ class TestBaseModel(unittest.TestCase):
     """test BaseModel"""
 
     def setUp(self):
-        self.testbasemodel = BaseModel()
+        self.basemodel = BaseModel()
 
     def test_doc(self):
         self.assertIsNotNone(BaseModel.__doc__)
@@ -19,9 +19,8 @@ class TestBaseModel(unittest.TestCase):
     def test_save_BaseModel(self):
         """test save_BaseModel"""
 
-        base = BaseModel()
-        base.save()
-        self.assertEqual(base.created_at, base.updated_at)
+        self.basemodel.save()
+        self.assertEqual(self.basemodel.created_at, self.basemodel.updated_at)
 
     def test_kwarg(self):
         basemodel = BaseModel(name="base")
@@ -31,6 +30,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertTrue(hasattr(basemodel, "name"))
         self.assertFalse(hasattr(basemodel, "updated_at"))
         self.assertTrue(hasattr(basemodel, "__class__"))
+
 
 if __name__ == "__main__":
     unittest.main()
