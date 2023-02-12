@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
 """Console module"""
 
-import sys
-=======
 """Module  HBNBCommand"""
 import sys
 import shlex
->>>>>>> e19c29ed23ba725c5458d10dafbec763e96e5601
 import cmd
 import models
 from models.base_model import BaseModel
