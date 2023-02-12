@@ -6,6 +6,18 @@ file storage module
 
 from json import load, dump, dumps
 from os.path import exists
+from models import base_model, user, place, state, city, amenity, review
+
+BaseModel = base_model.BaseModel
+User = user.User
+Place = place.Place
+State = state.State
+City = city.City
+Amenity = amenity.Amenity
+Review = review.Review
+
+name_class = ["BaseModel", "City", "State",
+              "Place", "Amenity", "Review", "User"]
 
 
 class FileStorage():
@@ -44,3 +56,7 @@ class FileStorage():
                 json_to_dict = load(file)
                 for key, value in json_to_dict.items():
                     class_name = key.split(".")[0]
+                    if class_name in name_class:
+                        FileStorage.__objects[key] = eval(class_name)(**value)
+                    else:
+                        pass
