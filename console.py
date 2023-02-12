@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Console module"""
 
+import sys
 import cmd
 import models
 from models.base_model import BaseModel
@@ -25,7 +26,7 @@ class HBNBCommand(cmd.Cmd):
     def do_quit(self, arg):
         """Quit command to exit the program
         """
-        return True
+        sys.exit()
 
     def emptyline(self):
         """does nothing

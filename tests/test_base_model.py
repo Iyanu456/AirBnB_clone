@@ -5,7 +5,7 @@ import unittest
 import os
 from models import storage
 from models.base_model import BaseModel
-
+import pep8
 
 class TestBaseModel(unittest.TestCase):
     """test BaseModel"""
@@ -13,6 +13,11 @@ class TestBaseModel(unittest.TestCase):
     def setUp(self):
         self.basemodel = BaseModel()
         self.basemodel_1 = BaseModel()
+
+    def test_pep8_BaseModel(self):
+        style = pep8.StyleGuide(quiet=True)
+        p = style.check_files(['models/base_model.py'])
+        self.assertEqual(p.total_errors, 0, "Check pep8")
 
     def test_doc(self):
         """test doc"""
