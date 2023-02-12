@@ -23,7 +23,7 @@ class BaseModel():
 
     def __str__(self):
         """ str definition """
-        return ("[{}] ({}) {}".format(self.__class__.__name_i_,
+        return ("[{}] ({}) {}".format(self.__class__.__name__,
                                       self.id, self.__dict__))
 
     def save(self):
