@@ -27,6 +27,6 @@ button{
 	margin: auto;
 	margin-right: 30px;
 }
-button ::hover{
+button:hover{
 	opacity: 90%;
 }
